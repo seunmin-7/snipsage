@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SnipSage Answer</title>
+    <link rel="stylesheet" href="result.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <h1>SnipSage</h1>
+        </div>
+        <button id="closeButton" class="icon-button" type="button" aria-label="Close window">×</button>
+      </header>
+
+      <section id="loadingState" class="state-card loading-card" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <div>
+          <h2>Reading selection…</h2>
+          <p>This usually takes a few seconds.</p>
+        </div>
+      </section>
+
+      <section id="successState" class="answer-section" hidden>
+        <div id="answerText" class="answer-text"></div>
+        <p id="modelLabel" class="model-label"></p>
+      </section>
+
+      <section id="errorState" class="state-card error-card" hidden>
+        <div>
+          <p class="error-kicker">Request failed</p>
+          <h2 id="errorText">Something went wrong.</h2>
+          <p>Check that the local server is running and the API key is valid.</p>
+        </div>
+      </section>
+
+      <footer class="footer-actions">
+        <button id="copyButton" class="secondary-button" type="button" disabled>Copy</button>
+      </footer>
+    </main>
+
+    <script src="result.js"></script>
+  </body>
+</html>
