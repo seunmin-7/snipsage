@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "SnapGrok Screenshot Assistant",
+  "version": "0.1.0",
+  "description": "Capture the visible Chrome tab with a shortcut, send it with a preset instruction to Grok, and show a temporary response window.",
+  "minimum_chrome_version": "102",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "windows",
+    "notifications"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8787/*",
+    "http://localhost:8787/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Open SnapGrok settings",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "commands": {
+    "run-shortcut-1": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Run SnapGrok shortcut 1"
+    },
+    "run-shortcut-2": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+B",
+        "mac": "Command+Shift+B"
+      },
+      "description": "Run SnapGrok shortcut 2"
+    },
+    "run-shortcut-3": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Run SnapGrok shortcut 3"
+    },
+    "run-shortcut-4": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Run SnapGrok shortcut 4"
+    },
+    "pause-extension": {
+      "description": "Pause SnapGrok and close its response windows"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "quit-listener.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

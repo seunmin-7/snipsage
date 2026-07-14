@@ -1,0 +1,5 @@
+In chrome://extensions, choose “Load unpacked” and select the folder named:
+
+extension
+
+Do not select the server folder and do not select this project root.
