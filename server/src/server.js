@@ -167,7 +167,7 @@ const server = http.createServer(async (request, response) => {
   }
 });
 
-server.listen(config.port, "127.0.0.1", () => {
+server.listen(config.port, "0.0.0.0", () => {
   console.log(`SnapGrok server: http://127.0.0.1:${config.port}`);
   console.log(`Model: ${config.mockMode ? "mock-xai" : config.model}`);
   console.log(`Local retention directory: ${config.dataDirectory}`);
