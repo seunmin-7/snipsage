@@ -1,7 +1,7 @@
 (() => {
   const DEFAULT_SETTINGS = {
     version: 2,
-    serverUrl: "http://127.0.0.1:8787",
+    serverUrl: "https://snipsage.onrender.com",
     paused: false,
     slots: [
       { name: "", instruction: "" },
